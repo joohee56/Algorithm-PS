@@ -1,6 +1,7 @@
 ## JadenCase 문자열 만들기
 * 문제 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/12951?language=java#
 * 시간 복잡도 : O(n)
+### sol1
 ```Java
 import java.util.*;
 
@@ -36,6 +37,25 @@ class Solution {
             answer.append(" ");
         }
         return answer.toString();
+    }
+}
+```
+
+### sol2
+```Java
+import java.util.*;
+
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] items = s.toLowerCase().split("");
+        boolean flag = true;
+        
+        for(String item : items) {
+            answer += flag ? item.toUpperCase() : item; 
+            flag = item.equals(" ") ? true : false; 
+        }
+        return answer;
     }
 }
 ```
