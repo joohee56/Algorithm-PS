@@ -6,7 +6,7 @@ import java.util.*;
 
 class Solution {
     public int solution(int[][] triangle) {
-        int h = triangle.length, w = triangle[h-1].length;
+        int h = triangle.length;
         
         for(int i=h-2; i>=0; i--) {
             for(int j=0; j<triangle[i].length; j++) {
