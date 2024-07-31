@@ -1,0 +1,22 @@
+## 단속카메라
+* 문제 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42884
+* 시간 복잡도 : O(nlogn)
+```java
+import java.util.*;
+
+class Solution {
+    public int solution(int[][] routes) {
+        int answer = 0;
+        Arrays.sort(routes, (o1, o2) -> Integer.compare(o1[1], o2[1]));
+        
+        int pos = -30_001;
+        for (int[] route : routes) {
+            if (route[0] > pos) {
+                answer++;
+                pos = route[1];
+            }
+        }
+        return answer;
+    }
+}
+```
